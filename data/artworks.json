@@ -1,6 +1,10 @@
 [
     {
-        "src": "images/oip.jpg",
-        "title": "OIP"
+        "src": "images/download.jpg",
+        "title": "download"
+    },
+    {
+        "src": "images/1.jpg",
+        "title": "1"
     }
 ]
