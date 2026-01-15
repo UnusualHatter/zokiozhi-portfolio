@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Alex Morgan, Visual Artist.">
+    <title>Alex Morgan | Visual Artist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="nav-logo">Alex Morgan</a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="#hero">Artworks</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#links">Socials</a>
+            </nav>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">☾</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section" data-aos="fade-up">
+            <div class="container hero-content">
+                <h1 id="hero-title">Alex Morgan</h1>
+                <a href="#gallery" class="btn primary-btn">View Works</a>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="gallery-container">
+                <div class="gallery-grid" id="gallery-grid">
+                    <p class="empty-state">Loading works...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Socials Section -->
+        <section id="links" class="section links-section hidden">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Connect</h2>
+                <div class="socials-grid" id="links-grid" data-aos="fade-left"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
