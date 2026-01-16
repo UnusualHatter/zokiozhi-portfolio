@@ -86,11 +86,13 @@ async function loadData() {
         const grid = document.getElementById('gallery-grid');
         grid.innerHTML = '';
         if (artworks.length === 0) {
-            grid.innerHTML = '<p class="empty-state">No artworks found. Drag images in <strong>admin.html</strong> to get started.</p>';
+            grid.innerHTML = '<p class="empty-state">No artworks found. Edit <strong>data/artworks.json</strong> to add images.</p>';
         } else {
             artworks.forEach((art, index) => {
                 const el = document.createElement('div');
-                el.className = 'gallery-item';
+                // Default to size 1 if not specified
+                const sizeClass = art.size ? `size-${art.size}` : 'size-1';
+                el.className = `gallery-item ${sizeClass}`;
                 el.setAttribute('data-aos', 'fade-up');
                 el.setAttribute('data-aos-delay', (index * 100).toString());
 

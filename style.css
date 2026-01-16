@@ -212,7 +212,7 @@ a {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 250px;
     grid-auto-flow: dense;
     gap: 15px;
@@ -222,13 +222,35 @@ a {
     cursor: pointer;
     overflow: hidden;
     position: relative;
-    border-radius: 8px; /* Optional rounded corners */
+    border-radius: 8px;
+    height: 100%;
 }
 
-/* Specific Spans to create the "Masonry" / Bento look */
-.gallery-item:nth-child(5n+1) { grid-column: span 2; grid-row: span 2; }
-.gallery-item:nth-child(7n+2) { grid-column: span 1; grid-row: span 2; }
-.gallery-item:nth-child(9n+5) { grid-column: span 2; grid-row: span 1; }
+/* JSON Controlled Sizes */
+.gallery-item.size-1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery-item.size-2 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.gallery-item.size-3 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+
+    .gallery-item.size-2,
+    .gallery-item.size-3 {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+}
 
 .gallery-item img {
     width: 100%;
@@ -239,6 +261,77 @@ a {
 
 .gallery-item:hover img {
     transform: scale(1.05);
+}
+
+/* Pricesheet Section */
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.price-card {
+    border: 1px solid var(--text-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    /* Subtle backdrop */
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.price-header {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.price-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.price-desc {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+.price-examples {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.price-examples img {
+    width: 48%;
+    aspect-ratio: 3/4;
+    /* Taller, portrait style looks better for character art */
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.price-examples img:hover {
+    transform: scale(1.1);
 }
 
 /* Socials Section */
